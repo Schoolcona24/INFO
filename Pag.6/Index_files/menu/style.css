@@ -1,0 +1,88 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Contenedor del menú */
+.menu-container {
+    background-color: #000; /* Fondo negro */
+    padding: 15px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para la lista del menú */
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para los elementos del menú */
+.menu ul li {
+    margin: 0 20px;
+    position: relative;
+}
+
+/* Estilos para los enlaces */
+.menu ul li a {
+    color: #fff; /* Texto blanco */
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+/* Efecto hover para los enlaces */
+.menu ul li a:hover {
+    background-color: #e60000; /* Rojo Italika */
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(230, 0, 0, 0.3);
+}
+
+/* Efecto activo (cuando se hace clic) */
+.menu ul li a:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Línea decorativa debajo del enlace */
+.menu ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #e60000; /* Rojo Italika */
+    bottom: 0;
+    left: 50%;
+    transition: all 0.3s ease;
+}
+
+/* Animación de la línea al hacer hover */
+.menu ul li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .menu ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu ul li {
+        margin: 10px 0;
+    }
+
+    .menu ul li a {
+        font-size: 16px;
+    }
+}

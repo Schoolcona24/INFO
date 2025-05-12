@@ -1,0 +1,46 @@
+*{
+    padding: 0px;
+    border: 0px;
+}
+body {
+    background-color: #66ff66
+}
+#todo {
+    width: 860px;
+    margin: 0px auto;
+}
+#cabecera {background-color: red}
+#menu {
+    text-align: center;
+    margin-top: -40px;
+}
+#menu li {
+    display: inline;
+    padding: 15px;
+}
+#menu a {
+    color: white;
+    text-decoration: none;
+}
+#contenido {
+    border: 1px solid black;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: white;
+    overflow: hidden;
+}
+#contenido img {
+    float: left;
+    padding-right: 15px;
+}
+#contenido h2 {
+    text-align: center;
+    color: #0099ff;
+}
+#contenido h3 {
+    text-align: right;
+    color: #000099;
+}
+#pie {
+    text-align: center;
+}

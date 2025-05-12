@@ -1,0 +1,71 @@
+<html>
+
+<!-- Mirrored from guisandounaweb.com/ejemploscursos/html/ejemplo13/ejemplo13.html by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 16 Feb 2013 19:06:37 GMT -->
+<head>
+<title>Mi primera página web</title>
+<meta content="text/html;" http-equiv="content-type" charset="utf-8">
+<link rel="StyleSheet" href="estilos.css" type="text/css" media="all">
+</head>
+<body>
+<div id="todo">
+    <div id="cabecera"><img src="cabecera.jpg" alt="cabecera de la web"/></div>
+    <div id="menu">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="tipos.html">Tipos de plantas</a></li>
+            <li><a href="briconsejos.html">Briconsejos de jardinería</a></li>
+            <li><a href="zonaoriental.html">Zona oriental</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul> 
+    </div>
+    <div id="contenido">
+        <h2>El invernadero, tu web sobre las plantas.</h2>
+        <h3>Todo lo que tienes que saber sobre las plantas.</h3>
+        <img src="cerezo.jpg" alt=""/>
+        <p>Bienvenido a mi web, una web creada por y para los amantes de las plantas, aquí vamos a poder encontrar muchas formas de conocerlas, los tipos de plantas, algunos consejos para el jardín y nuestra sección sobre jardinería japonesa donde descubrirás el mundo de los bonsais, prebonsais y todo hacerca de estas maravillosas miniaturas.</p>
+        <p>No dudes en ponerte en contacto conmigo si tienes alguna duda al respecto, utiliza la sección de "contacto" y te responderé lo más brevemente posible.</p>
+    </div>
+    <div id="pie"><img src="email.jpg"/></div>
+</div>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+
+<!-- Mirrored from guisandounaweb.com/ejemploscursos/html/ejemplo13/ejemplo13.html by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 16 Feb 2013 19:06:39 GMT -->
+</html>
