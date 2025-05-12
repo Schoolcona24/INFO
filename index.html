@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neon Nexus | Futuro Digital</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;700&family=Orbitron:wght@800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --neon-pink: #ff2a6d;
+      --neon-blue: #05d9e8;
+      --neon-purple: #d300c5;
+      --neon-green: #00ff9d;
+      --neon-yellow: #f9f002;
+      --dark-bg: #0d0221;
+      --darker-bg: #05010f;
+      --grid-line: rgba(5, 217, 232, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Rajdhani', sans-serif;
+      background-color: var(--dark-bg);
+      color: white;
+      min-height: 100vh;
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image: 
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+      background-size: 50px 50px;
+      background-attachment: fixed;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(13, 2, 33, 0.85);
+      backdrop-filter: blur(15px);
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--neon-blue);
+      box-shadow: 0 0 20px rgba(5, 217, 232, 0.3);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 0 2rem;
+    }
+
+    nav a {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      color: var(--neon-blue);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.9rem;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      background: transparent;
+      border: 1px solid var(--neon-blue);
+      box-shadow: 0 0 10px rgba(5, 217, 232, 0.3),
+                  inset 0 0 5px rgba(5, 217, 232, 0.2);
+    }
+
+    nav a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(5, 217, 232, 0.2), transparent);
+      transition: 0.5s;
+    }
+
+    nav a:hover {
+      color: white;
+      text-shadow: 0 0 5px var(--neon-blue),
+                   0 0 10px var(--neon-blue);
+      box-shadow: 0 0 20px var(--neon-blue),
+                 inset 0 0 10px rgba(5, 217, 232, 0.5);
+    }
+
+    nav a:hover::before {
+      left: 100%;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 90vh;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255, 42, 109, 0.2) 0%, rgba(13, 2, 33, 0) 70%);
+      z-index: -1;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(5, 217, 232, 0.15) 0%, rgba(13, 2, 33, 0) 70%);
+      z-index: -1;
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      background: linear-gradient(90deg, 
+        var(--neon-pink), 
+        var(--neon-blue),
+        var(--neon-green));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+      letter-spacing: 3px;
+      position: relative;
+      animation: glitch 5s infinite alternate;
+    }
+
+    @keyframes glitch {
+      0%, 100% {
+        text-shadow: 0.05em 0 0 var(--neon-pink),
+                    -0.05em -0.025em 0 var(--neon-blue),
+                    -0.025em 0.05em 0 var(--neon-green);
+      }
+      14% {
+        text-shadow: 0.05em 0 0 var(--neon-pink),
+                    -0.05em -0.025em 0 var(--neon-blue),
+                    -0.025em 0.05em 0 var(--neon-green);
+      }
+      15%, 49% {
+        text-shadow: -0.05em -0.025em 0 var(--neon-pink),
+                     0.025em 0.025em 0 var(--neon-blue),
+                     -0.05em -0.05em 0 var(--neon-green);
+      }
+      50% {
+        text-shadow: 0.025em 0.05em 0 var(--neon-pink),
+                     0.05em 0 0 var(--neon-blue),
+                     0 -0.05em 0 var(--neon-green);
+      }
+      99% {
+        text-shadow: -0.025em 0 0 var(--neon-pink),
+                     -0.025em -0.025em 0 var(--neon-blue),
+                     -0.025em -0.05em 0 var(--neon-green);
+      }
+    }
+
+    .tagline {
+      font-size: 1.5rem;
+      margin-bottom: 3rem;
+      text-align: center;
+      max-width: 800px;
+      color: rgba(255, 255, 255, 0.8);
+      position: relative;
+    }
+
+    .tagline::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
+      margin: 1.5rem auto;
+      border-radius: 3px;
+    }
+
+    .cta-container {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .cta-button {
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      z-index: 1;
+    }
+
+    .primary {
+      background: var(--neon-pink);
+      color: white;
+      box-shadow: 0 0 15px var(--neon-pink);
+      border: 1px solid var(--neon-pink);
+    }
+
+    .secondary {
+      background: transparent;
+      color: var(--neon-blue);
+      border: 1px solid var(--neon-blue);
+      box-shadow: 0 0 10px rgba(5, 217, 232, 0.3);
+    }
+
+    .cta-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: 0.5s;
+      z-index: -1;
+    }
+
+    .cta-button:hover::before {
+      left: 100%;
+    }
+
+    .primary:hover {
+      box-shadow: 0 0 25px var(--neon-pink);
+      transform: translateY(-3px);
+    }
+
+    .secondary:hover {
+      background: rgba(5, 217, 232, 0.1);
+      box-shadow: 0 0 20px var(--neon-blue);
+      transform: translateY(-3px);
+    }
+
+    .holographic-display {
+      width: 100%;
+      max-width: 800px;
+      height: 400px;
+      margin: 3rem auto;
+      border: 1px solid var(--neon-blue);
+      border-radius: 10px;
+      background: rgba(5, 217, 232, 0.05);
+      box-shadow: 0 0 30px rgba(5, 217, 232, 0.2),
+                  inset 0 0 20px rgba(5, 217, 232, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .holographic-display::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        linear-gradient(90deg, transparent 48%, var(--neon-blue) 50%, transparent 52%),
+        linear-gradient(0deg, transparent 48%, var(--neon-blue) 50%, transparent 52%);
+      background-size: 50px 50px;
+      opacity: 0.1;
+      pointer-events: none;
+    }
+
+    .holographic-display::after {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      border: 2px solid var(--neon-pink);
+      border-radius: 15px;
+      animation: pulse 4s infinite alternate;
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.5;
+      }
+      100% {
+        transform: scale(1.02);
+        opacity: 0.8;
+      }
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 5rem 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .feature-card {
+      background: rgba(5, 10, 30, 0.5);
+      border-radius: 10px;
+      padding: 2rem;
+      border: 1px solid rgba(5, 217, 232, 0.3);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(5, 217, 232, 0.2);
+      border-color: var(--neon-blue);
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--neon-green);
+      text-shadow: 0 0 10px var(--neon-green);
+    }
+
+    .feature-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--neon-blue);
+      letter-spacing: 1px;
+    }
+
+    .feature-desc {
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.7;
+    }
+
+    footer {
+      background: var(--darker-bg);
+      padding: 3rem 2rem;
+      text-align: center;
+      border-top: 1px solid rgba(5, 217, 232, 0.3);
+      position: relative;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--neon-pink), var(--neon-blue), transparent);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--neon-blue);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--neon-green);
+      text-shadow: 0 0 5px var(--neon-green);
+    }
+
+    .copyright {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--neon-blue);
+    }
+
+    .social-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(5, 217, 232, 0.3), transparent);
+      transition: 0.5s;
+    }
+
+    .social-link:hover::before {
+      left: 100%;
+    }
+
+    .social-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 15px var(--neon-blue);
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .tagline {
+        font-size: 1.2rem;
+      }
+      
+      .cta-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .holographic-display {
+        height: 300px;
+      }
+      
+      .features {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Efectos de partículas */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      background: var(--neon-color);
+      opacity: 0;
+      animation: float-up linear infinite;
+    }
+
+    @keyframes float-up {
+      0% {
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.7;
+      }
+      90% {
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(-100px) scale(1);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="particles" id="particles"></div>
+  
+  <header>
+    <nav>
+      <a href="index.html">INICIO</a>
+      <a href="Pag.1/index.html">Pagina 1</a>
+      <a href="Pag.2/index.html">Pagina 2</a>
+      <a href="Pag.3/index.html">Pagina 3</a>
+      <a href="Pag.4/index.html">Pagina 4</a>
+      <a href="Pag.5/index.html">HOST local</a>
+      <a href="Pag.6/index.html">Pagina estatica</a>
+      <a href="Pag.7/curiculun.pdf">curiculun</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>NEON NEXUS</h1>
+      <p class="tagline">Donde el futuro converge con la innovación digital</p>
+      
+      <div class="cta-container">
+        <a href="#features" class="cta-button primary">EXPLORAR</a>
+        <a href="#contact" class="cta-button secondary">CONECTAR</a>
+      </div>
+      
+      <div class="holographic-display"></div>
+    </section>
+
+    <section id="features" class="features">
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3 class="feature-title">VELOCIDAD CUÁNTICA</h3>
+        <p class="feature-desc">Tecnología de procesamiento ultrarrápido que redefine los límites de la computación digital.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h3 class="feature-title">SEGURIDAD HOLOGRÁFICA</h3>
+        <p class="feature-desc">Sistemas de encriptación basados en patrones de luz imposibles de descifrar.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🌐</div>
+        <h3 class="feature-title">RED NEURAL</h3>
+        <p class="feature-desc">Conectividad inteligente que aprende y se adapta a tus patrones de uso en tiempo real.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🧠</div>
+        <h3 class="feature-title">IA EVOLUTIVA</h3>
+        <p class="feature-desc">Algoritmos que desarrollan conciencia contextual para interacciones más humanas.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🔄</div>
+        <h3 class="feature-title">SINCRONIZACIÓN UNIVERSAL</h3>
+        <p class="feature-desc">Integración perfecta entre todos tus dispositivos y plataformas digitales.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">✨</div>
+        <h3 class="feature-title">INTERFAZ HOLO</h3>
+        <p class="feature-desc">Control por gestos y comandos de voz con retroalimentación háptica avanzada.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="social-links">
+      <a href="#" class="social-link">📱</a>
+      <a href="#" class="social-link">💻</a>
+      <a href="#" class="social-link">🖥️</a>
+      <a href="#" class="social-link">📡</a>
+    </div>
+    
+    <div class="footer-links">
+      <a href="#">Privacidad</a>
+      <a href="#">Términos</a>
+      <a href="#">Soporte</a>
+      <a href="#">Carreras</a>
+      <a href="#">Contacto</a>
+    </div>
+    
+    <p class="copyright">© 2023 NEON NEXUS | Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    // Efecto de partículas avanzado
+    document.addEventListener('DOMContentLoaded', function() {
+      const particlesContainer = document.getElementById('particles');
+      const neonColors = ['#ff2a6d', '#05d9e8', '#d300c5', '#00ff9d', '#f9f002'];
+      
+      function createParticle() {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        const size = Math.random() * 8 + 2;
+        const posX = Math.random() * window.innerWidth;
+        const color = neonColors[Math.floor(Math.random() * neonColors.length)];
+        const duration = Math.random() * 15 + 10;
+        const delay = Math.random() * 5;
+        
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.left = `${posX}px`;
+        particle.style.background = color;
+        particle.style.animationDuration = `${duration}s`;
+        particle.style.animationDelay = `${delay}s`;
+        particle.style.setProperty('--neon-color', color);
+        
+        particlesContainer.appendChild(particle);
+        
+        // Eliminar partícula después de la animación
+        setTimeout(() => {
+          particle.remove();
+        }, duration * 1000);
+      }
+      
+      // Crear partículas continuamente
+      setInterval(createParticle, 300);
+      
+      // Efecto de cursor personalizado
+      const cursor = document.createElement('div');
+      cursor.style.position = 'fixed';
+      cursor.style.width = '20px';
+      cursor.style.height = '20px';
+      cursor.style.borderRadius = '50%';
+      cursor.style.background = 'rgba(5, 217, 232, 0.5)';
+      cursor.style.pointerEvents = 'none';
+      cursor.style.zIndex = '9999';
+      cursor.style.transform = 'translate(-50%, -50%)';
+      cursor.style.boxShadow = '0 0 15px #05d9e8';
+      cursor.style.display = 'none';
+      document.body.appendChild(cursor);
+      
+      document.addEventListener('mousemove', (e) => {
+        cursor.style.left = `${e.clientX}px`;
+        cursor.style.top = `${e.clientY}px`;
+        cursor.style.display = 'block';
+      });
+      
+      document.addEventListener('mouseout', () => {
+        cursor.style.display = 'none';
+      });
+      
+      // Efecto de hover en enlaces
+      document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('mouseenter', () => {
+          cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+          cursor.style.background = 'rgba(255, 42, 109, 0.7)';
+        });
+        
+        link.addEventListener('mouseleave', () => {
+          cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+          cursor.style.background = 'rgba(5, 217, 232, 0.5)';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

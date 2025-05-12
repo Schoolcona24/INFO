@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<head>
+    <title>Crud Operation</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+ <style>
+        /* Estilo futurista para el menú */
+        .menu-header {
+            display: flex;
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            padding: 15px 0;
+            box-shadow: 0 4px 30px rgba(0, 255, 255, 0.2);
+            font-family: 'Orbitron', 'Arial', sans-serif;
+            border-radius: 0 0 10px 10px;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+        }
+        
+        .menu-header a {
+            padding: 12px 20px;
+            margin: 0 5px;
+            text-decoration: none;
+            color: #00ffff;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            position: relative;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+        }
+        
+        .menu-header a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+            transform: translateY(-3px);
+        }
+        
+        .menu-header a:hover::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ffff, transparent);
+            box-shadow: 0 0 10px #00ffff;
+        }
+        
+        /* Estilo para la página activa */
+        .menu-header a.activa {
+            color: #ffffff;
+            text-shadow: 0 0 15px rgba(0, 255, 255, 1);
+        }
+        
+        .menu-header a.activa::before {
+            content: '➤';
+            margin-right: 8px;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="menu-header">
+    <nav>
+        <a href="../index.html">INICIO</a>
+      <a href="../Pag.1/index.html">PÁGINA 1</a>
+      <a href="../Pag.2/index.html">PÁGINA 2</a>
+      <a href="../Pag.3/index.html">PÁGINA 3</a>
+      <a href="../Pag.4/index.html">PÁGINA 4</a>
+     <a href="index.html">Host local</a>
+     <a href="../Pag.6/index.html">Página estática</a>
+    <a href="../Pag.7/curiculun.pdf">curriculun</a>
+
+    </nav>
+  </header>
+
+    <table>
+        <tr>
+            <td>
+                <form autocomplete="off" onsubmit="onFormSubmit()">
+                    <div>
+                        <label for="productCode">Product Code</label>
+                        <input type="text" name="productCode" id="productCode">
+                    </div>
+                    <div>
+                        <label for="product">Product Name</label>
+                        <input type="text" name="product" id="product">
+                    </div>
+                    <div>
+                        <label for="qty">Qty</label>
+                        <input type="number" name="qty" id="qty">
+                    </div>
+                    <div>
+                        <label for="perPrice">Price</label>
+                        <input type="number" name="perPrice" id="perPrice">
+                    </div>
+
+                    <div class="form_action--button">
+                        <input type="submit" value="Submit">
+                        <input type="reset" value="Reset">
+                    </div>
+                </form>
+
+                <td>
+                    <table class="list" id="storeList">
+                        <thead>
+                            <tr>
+                                <th>Product Code</th>
+                                <th>Product Name</th>
+                                <th>Qty</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </td>
+            </td>
+        </tr>
+    </table>
+    <script type="text/javascript" src="./script.js"></script>
+</body>
+</html>
