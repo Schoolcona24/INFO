@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web servicio magtimus</title>
+    <link rel="stylesheet" href="iconos/css/fontello.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/estilos-index.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <!-- Añade la fuente Orbitron para el menú futurista -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <style>
+        /* MENÚ FUTURISTA - ESTILOS CORREGIDOS */
+        .menu-futurista {
+            display: flex;
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            padding: 15px 0;
+            box-shadow: 0 4px 30px rgba(0, 255, 255, 0.2);
+            font-family: 'Orbitron', sans-serif;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+            justify-content: center;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .menu-futurista a {
+            padding: 12px 20px;
+            margin: 0 5px;
+            text-decoration: none;
+            color: #00ffff;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            position: relative;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+        }
+        
+        .menu-futurista a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+            transform: translateY(-3px);
+        }
+        
+        .menu-futurista a:hover::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ffff, transparent);
+            box-shadow: 0 0 10px #00ffff;
+        }
+        
+        .menu-futurista a.activa {
+            color: #ffffff;
+            text-shadow: 0 0 15px rgba(0, 255, 255, 1);
+        }
+        
+        .menu-futurista a.activa::before {
+            content: '➤';
+            margin-right: 8px;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+        
+        /* Ajuste para el contenido principal (evita que quede oculto tras el menú fijo) */
+        main {
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menú Futurista (fijo en la parte superior) -->
+    <nav class="menu-futurista">
+        <a href="../index.html" class="activa">INICIO</a>
+        <a href="../Pag.1/index.html">PÁGINA 1</a>
+        <a href="../Pag.2/index.html">PÁGINA 2</a>
+        <a href="../Pag.3/index.html">PÁGINA 3</a>
+        <a href="../Pag.4/index.html">PÁGINA 4</a>
+        <a href="../Pag.5/index.html">HOST LOCAL</a>
+        <a href="../Pag.6/index.html">PÁGINA ESTÁTICA</a>
+        <a href="../Pag.7/curiculun.pdf">CURRICULUM</a>
+    </nav>
+
+    <!-- Header original de Magtimus (se mantiene igual) -->
+    <header>
+        <img src="images/logo_magtimus3.png" class="img-logo">
+        <input type="checkbox" id="check">
+        <label for="check" class="icon-menu"></label>
+        
+        <nav class="menu">
+            <ul>
+                <li><a href="#" style="background:#df6666;color:white;">Inicio</a></li>
+                <li><a href="#">Acerca de</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Trabajos</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Resto del contenido (igual que tu versión original) -->
+    <main>
+        <div class="content-one">
+            <div class="content-portada">
+                <div class="content-item1">
+                    <h4>It Doesn't Take a Rocket <h3>Scientist</h3> </h4>
+                    <h2>IT TAKES A DESIGNER</h2>
+                </div>
+            </div>
+        </div>
+        <div class="content-two">
+            <div class="content-details">
+                <div class="content-item2">
+                    <label class="icon-heart"></label>
+                    <h4>Design</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga ut nulla dicta, ab doloremque consequatur harum mollitia, ipsam minus magnam quaerat praesentium ratione, amet aperiam incidunt. Iste porro molestiae non.</p>
+                </div>
+                <div class="content-item2">
+                    <label class="icon-laptop"></label>
+                    <h4>Bootstrap</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga ut nulla dicta, ab doloremque consequatur harum mollitia, ipsam minus magnam quaerat praesentium ratione, amet aperiam incidunt. Iste porro molestiae non.</p>
+                </div>
+                <div class="content-item2">
+                    <label class="icon-support"></label>
+                    <h4>Support</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga ut nulla dicta, ab doloremque consequatur harum mollitia, ipsam minus magnam quaerat praesentium ratione, amet aperiam incidunt. Iste porro molestiae non.</p>
+                </div>
+            </div>
+        </div>
+        <div class="content-three">
+            <div class="content-module">
+                <h3>LATEST WORKS</h3>
+                <img src="images/img2.png">
+                <img src="images/img3.png">
+                <img src="images/img4.png">
+            </div>
+        </div>
+        <div class="content-for">
+            <div class="content-item3">
+                <h4>WE CREATE FIRST CLASS DESIGN</h4>
+                <p>By being true to the brand we represent, we elevate the audiences' relationship to it. Like becomes love becomes a passion. Passion becomes advocacy. And we see the brand blossom from within, creating a whole story the audience embraces. That's when the brand can truly flex its muscles.</p>
+                <img src="images/img5.png">
+            </div>
+            <div class="content-five">
+                <div class="content-item4">
+                    <h4>WE ARE STORYTELLERS. BRANDS ARE OUR SUBJECTS. DESIGN IS OUR VOICE.</h4>
+                    <p>We believe ideas come from everyone, everywhere. At BlackTie, everyone within our agency walls is a designer in their own right. And there are a few principles we believe—and we believe everyone should believe—about our design craft. These truths drive us, motivate us, and ultimately help us redefine the power of design.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <label class="icon-twitter"></label>
+        <label class="icon-facebook"></label>
+        <label class="icon-instagram"></label>
+    </footer>
+</body>
+</html>
